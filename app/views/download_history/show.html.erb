@@ -1,0 +1,31 @@
+<span>
+  <%= link_to '<<- Back', send("#{@attachment.container.class.name.underscore}_path", @attachment.container) %>
+</span>
+
+<h2>Download History</h2>
+
+<table class="list wiki-page-versions">
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr class="wiki-page-version">
+        <td class="author">
+          <%= history.user.login %>
+        </td>
+        <td>
+          <%= format_time(history.created_at) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% other_formats_links do |f| %>
+  <%= f.link_to 'PDF', url: { id: @attachment.id } %>
+  <%= f.link_to 'CSV', url: { id: @attachment.id } %>
+<% end %>
