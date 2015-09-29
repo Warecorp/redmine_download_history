@@ -1,3 +1,4 @@
-= redmine_download_history
+= Redmine download history
 
-Description goes here
+The plugin provide functionality for save download history for each attachment. Just add it to a redmine and enjoy. 
+No seetnigs, no configuration. Only add permission 'View Attachment History
