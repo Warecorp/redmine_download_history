@@ -10,7 +10,7 @@ class DownloadHistoryController < ApplicationController
         send_data(
           csv_for(@histories),
           type: 'text/csv; header=present',
-          filename: "Download History - #{Time.now.strftime("%Y-%m-%d")} - #{@attachment.filename}"
+          filename: "Download History - #{Time.now.strftime("%Y-%m-%d")} - #{attachment.container.id} - #{@attachment.filename}"
         )
       end
       format.pdf { send_file_headers! type: 'application/pdf', filename: 'issues.pdf' }

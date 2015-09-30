@@ -9,6 +9,7 @@ module DownloadHistoryHelper
     pdf.SetFontStyle('B', 11)
     pdf.RDMMultiCell(190, 5, "Download History - #{attachment.filename}")
     pdf.ln
+    pdf.RDMMultiCell(190, 5, "##{attachment.container.try(:id)}: #{attachment.container.try(:subject)}")
 
     page_width    = pdf.get_page_width  # 297
     left_margin   = pdf.get_original_margins['left'] # 10
