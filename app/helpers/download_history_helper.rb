@@ -16,7 +16,7 @@ module DownloadHistoryHelper
     row_height    = 4
     table_width   = page_width - right_margin - left_margin
 
-    pdf.RDMMultiCell(190, table_width, "##{attachment.container.try(:id)}: #{attachment.container.try(:subject)}")
+    pdf.RDMMultiCell(table_width, 5, "##{attachment.container.try(:id)}: #{attachment.container.try(:subject)}")
     pdf.ln
 
     pdf.SetFontStyle('B', 8)
